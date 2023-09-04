@@ -1,0 +1,30 @@
+﻿@inherits CountryListBase
+
+@if (Countries == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>IsoCode</th>
+                <th>Observations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in Countries)
+            {
+                <tr>
+                    <td>@country.Id</td>
+                    <td>@country.Name</td>
+                    <td>@country.IsoCode</td>
+                    <td>@country.Observations</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
