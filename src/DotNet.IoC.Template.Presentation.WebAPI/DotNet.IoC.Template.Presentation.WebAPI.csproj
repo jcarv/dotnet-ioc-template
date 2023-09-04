@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotNet.IoC.Template.Application.Services\DotNet.IoC.Template.Application.Services.csproj" />
+    <ProjectReference Include="..\DotNet.IoC.Template.Data.EFCore\DotNet.IoC.Template.Data.EFCore.csproj" />
+    <ProjectReference Include="..\DotNet.IoC.Template.Infrastructure.CrossCutting\DotNet.IoC.Template.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\DotNet.IoC.Template.Presentation.Models\DotNet.IoC.Template.Presentation.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
