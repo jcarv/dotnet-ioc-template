@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.Modal" Version="7.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DotNet.IoC.Template.Application.Dto\DotNet.IoC.Template.Application.Dto.csproj" />
     <ProjectReference Include="..\DotNet.IoC.Template.Application.Services\DotNet.IoC.Template.Application.Services.csproj" />
     <ProjectReference Include="..\DotNet.IoC.Template.Data.EFCore\DotNet.IoC.Template.Data.EFCore.csproj" />

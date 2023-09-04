@@ -1,7 +1,9 @@
 ﻿namespace DotNet.IoC.Template.Presentation.BlazorServer.Components.Country
 {
+    using Blazored.Modal.Services;
     using DotNet.IoC.Template.Application.Dto;
     using DotNet.IoC.Template.Application.Services.Countries;
+    using DotNet.IoC.Template.Presentation.BlazorServer.Components.Confirm;
     using Microsoft.AspNetCore.Components;
 
     public class CountryListBase : ComponentBase
@@ -12,6 +14,8 @@
         public IEnumerable<CountryDto> Countries { get; set; }
 
         public bool IsLoading = false;
+
+        [CascadingParameter] public IModalService Modal { get; set; } = default!;
 
         protected override async Task OnInitializedAsync()
         {
@@ -29,5 +33,14 @@
             StateHasChanged();
         }
 
+        public async void DeleteCountry(int? id)
+        {
+            var result = await Modal.Show<ConfirmDialog>("Delete country").Result;
+
+            if (result.Confirmed && id.HasValue)
+            {
+                //delete
+            }
+        }
     }
 }

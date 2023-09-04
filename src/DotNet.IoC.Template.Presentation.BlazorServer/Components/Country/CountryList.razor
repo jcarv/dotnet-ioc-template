@@ -9,10 +9,11 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Id</th> 
                 <th>Name</th>
                 <th>IsoCode</th>
                 <th>Observations</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@ else
                     <td>@country.Name</td>
                     <td>@country.IsoCode</td>
                     <td>@country.Observations</td>
+                    <td><button @onclick="() => DeleteCountry(country.Id)">Del</button></td>
                 </tr>
             }
         </tbody>
