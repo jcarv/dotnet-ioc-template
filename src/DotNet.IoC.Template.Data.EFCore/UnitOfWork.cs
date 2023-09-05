@@ -3,7 +3,6 @@
     using DotNet.IoC.Template.Data.EFCore.Repositories;
     using DotNet.IoC.Template.Domain.Core;
     using DotNet.IoC.Template.Domain.Core.Repositories;
-    using Microsoft.EntityFrameworkCore;
 
     public class UnitOfWork : IUnitOfWork
     {

@@ -1,5 +1,6 @@
 ﻿namespace DotNet.IoC.Template.Presentation.BlazorServer.Components.Country
 {
+    using Blazored.Modal;
     using Blazored.Modal.Services;
     using Blazored.Toast.Services;
     using DotNet.IoC.Template.Application.Dto;
@@ -35,6 +36,24 @@
             IsLoading = false;
 
             StateHasChanged();
+        }
+
+        public async void EditCountry(int? id)
+        {
+            if (id.HasValue)
+            {
+                var parameters = new ModalParameters();
+                parameters.Add(nameof(CountryDialog.Id), id.Value);
+
+                var result = await Modal.Show<CountryDialog>("Country", parameters).Result;
+
+                if (result.Confirmed)
+                {
+                    Countries = await CountryService.GetAllAsync();
+                }
+
+                StateHasChanged();
+            }
         }
 
         public async void DeleteCountry(int? id)

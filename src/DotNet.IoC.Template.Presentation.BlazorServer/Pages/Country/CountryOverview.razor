@@ -3,4 +3,6 @@
 
 <PageTitle>Countries</PageTitle>
 <h1>Countries</h1>
-<CountryList></CountryList>
+<CountryList @ref="CountryListComponent"></CountryList>
+
+<button type="button" class="btn btn-primary" @onclick="() => AddCountry()">Add</button>

@@ -1,0 +1,32 @@
+﻿@inherits CountryDialogBase
+
+<div>
+    <EditForm Model="@Country" OnValidSubmit="HandleValidSubmit">
+        @if (IsLoading == true)
+        {
+            <p class="ml-2 my-3"><em>Loading...</em></p>
+        }
+        else
+        {
+            <div class="form-group">
+                <label>Name</label>
+                <InputText @bind-Value="Country.Name" class="form-control" id="CountryName"/>
+            </div>
+            
+            <div class="form-group row mx-3">
+                <label>Iso Code</label>
+                <InputText @bind-Value="Country.IsoCode" class="form-control" id="CountryIsoCode"/>
+            </div>
+            
+            <div class="form-group row mx-3">
+                <label>Observations</label>
+                <InputText @bind-Value="Country.Observations" class="form-control" id="CountryObservations"/>
+            </div>
+            
+            <div class="float-right">
+                <input type="submit" class="btn btn-primary" value="Save"/>
+                <button @onclick="Cancel" class="btn btn-secondary">Cancel</button>
+            </div>
+        }
+    </EditForm>
+</div>

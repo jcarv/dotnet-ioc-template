@@ -14,6 +14,7 @@ else
                 <th>IsoCode</th>
                 <th>Observations</th>
                 <th>Delete</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +25,8 @@ else
                     <td>@country.Name</td>
                     <td>@country.IsoCode</td>
                     <td>@country.Observations</td>
-                    <td><button @onclick="() => DeleteCountry(country.Id)">Del</button></td>
+                    <td><button type="button" class="btn btn-primary" @onclick="() => EditCountry(country.Id)">Edit</button></td>
+                    <td><button type="button" class="btn btn-danger" @onclick="() => DeleteCountry(country.Id)">Del</button></td>
                 </tr>
             }
         </tbody>
