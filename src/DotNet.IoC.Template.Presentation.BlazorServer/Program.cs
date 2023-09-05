@@ -2,6 +2,7 @@ using DotNet.IoC.Template.Infrastructure.CrossCutting.Settings;
 using DotNet.IoC.Template.Application.Services.Configuration;
 using DotNet.IoC.Template.Data.EFCore.Configuration;
 using Blazored.Modal;
+using Blazored.Toast;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,9 @@ builder.Services.AddServerSideBlazor();
 
 // Add Modal Implementation
 builder.Services.AddBlazoredModal();
+
+// Add Toast Implementation
+builder.Services.AddBlazoredToast();
 
 var app = builder.Build();
 
